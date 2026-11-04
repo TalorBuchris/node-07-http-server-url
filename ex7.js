@@ -11,3 +11,12 @@
 const http = require("http");
 
 // write your code here
+
+const server = http.createServer((req, res) => {
+    console.log(req.method);
+    console.log(req.url);
+    console.log(req.httpVersion);
+    
+    res.end();
+});
+server.listen(3000, () => console.log("Server running on http://localhost:3000"));

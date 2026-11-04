@@ -12,3 +12,12 @@ const { URL } = require("url");
 const urlStr = 'https://site.com/products?id=15&type=book&lang=en';
 
 // write your code here
+
+const http = require("http");
+const server = http.createServer((req, res) => {
+    const myUrl = new URL(urlStr);
+    const {id, type, lang} = myUrl.searchParams.get('id', 'type', 'lang');
+    res.end(`id: ${id}, type: ${type}, lang:  ${lang}`);
+
+});
+server.listen(3000, () => console.log("Server running on http://localhost:3000"));

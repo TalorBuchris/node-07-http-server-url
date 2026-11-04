@@ -6,3 +6,11 @@
 const http = require("http");
 
 // write your code here
+
+const server = http.createServer((req, res) => {
+    
+    res.end(JSON.stringify(req.headers))
+
+});
+
+server.listen(3000, () => console.log("Server running on http://localhost:3000"));

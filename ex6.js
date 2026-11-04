@@ -13,3 +13,13 @@ const { URL } = require("url");
 const urlStr = 'https://app.com/search?query=node&sort=asc';
 
 // write your code here
+
+const http = require("http");
+const server = http.createServer((req, res) => {
+    const myUrl = new URL(urlStr);
+    myUrl.searchParams.set('sort', 'desc');
+    myUrl.searchParams.set('page', 3);
+    myUrl.searchParams.delete('query');
+    res.end(myUrl.href)
+});
+server.listen(3000, () => console.log("Server running on http://localhost:3000"));
