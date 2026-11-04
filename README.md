@@ -1,51 +1,51 @@
-# Exercise 7 - Basic Node.js Server & the URL Module 🌐
+# תרגיל 7 – שרת Node.js בסיסי ומודול URL 🌐
 
-Nine short Node.js exercises, without Express:
+תשעה תרגילים קצרים ב-Node.js, ללא Express.
 
-| Part | Exercises | Topic |
+| חלק | תרגילים | נושא |
 |---|---|---|
-| A - Base server | 1-3 | An `http` server that returns text, the request method and the request headers |
-| B - URL Module | 4-6 | Parsing a URL, reading query parameters and changing them |
-| C - Vanilla server | 7-9 | Logging request details in the terminal, responding by method + header, manual routing |
+| A – שרת בסיסי | 1–3 | שרת `http` שמחזיר טקסט, שיטת בקשה וכותרות בקשה |
+| B – מודול URL | 4–6 | ניתוח כתובת URL, קריאת פרמטרים ושינוי שלהם |
+| C – שרת Vanilla | 7–9 | הצגת פרטי בקשות בטרמינל, תגובה לפי שיטה וכותרת, וניתוב ידני |
 
-## Getting started
+## תחילת העבודה
 
-1. Click **Use this template** → **Create a new repository** at the top of this page to create your own repo.
-2. `git clone` your new repo and open it in VS Code.
-3. In the terminal, run once: `npm install` (Node 20 or newer is required - check with `node -v`).
-4. Write your code in the files `ex1.js` to `ex9.js`. Each file is a separate program, and the task is written at the top of each file.
+1. לחצו על **Use this template** ← **Create a new repository** בראש העמוד כדי ליצור מאגר משלכם.
+2. בצעו `git clone` למאגר החדש שלכם ופתחו אותו ב-VS Code.
+3. בטרמינל, הריצו פעם אחת: `npm install` (נדרשת גרסה 20 ומעלה של Node – בדקו באמצעות `node -v`).
+4. כתבו את הקוד שלכם בקבצים `ex1.js` עד `ex9.js`. כל קובץ הוא תוכנית נפרדת, והמשימה מופיעה בראש כל קובץ.
 
-### How to run an exercise
+### איך מריצים תרגיל?
 
 ```bash
 node ex1.js
 ```
 
-- **Server exercises (1-3, 7-9):** the server listens on port `3000`. Open `http://localhost:3000` in the browser. Send `POST` / `PUT` / `DELETE` requests and requests with custom headers using Postman or Thunder Client. Stop the server with `Ctrl + C` before running another exercise.
-- **URL exercises (4-6):** the program prints to the terminal and exits.
+- **תרגילי שרת (1–3, 7–9):** השרת מאזין בפורט `3000`. פתחו בדפדפן את הכתובת `http://localhost:3000`. שלחו בקשות `POST` / `PUT` / `DELETE` ובקשות עם כותרות מותאמות אישית באמצעות Postman או Thunder Client. עצרו את השרת באמצעות `Ctrl + C` לפני הפעלת תרגיל אחר.
+- **תרגילי URL (4–6):** התוכנית מדפיסה פלט בטרמינל ומסתיימת.
 
-## How to check your work
+## איך לבדוק את העבודה שלכם?
 
 ```bash
 npm test
 ```
 
-- At first all tests are red (✘). Each test name starts with the number of the exercise it checks.
-- The tests run each file exactly like `node exN.js`, send real requests to your server, and check what it answered **and what it printed in the terminal** (`console.log`).
-- You don't need to start the server yourself before `npm test`. The tests start it on their own (on a free port, even if port 3000 is busy).
-- Under every failing test you'll see what went wrong, and sometimes also what your program actually printed.
-- In the URL exercises, the tests also run your code with a **different** URL instead of the one in the exercise, to make sure the output really comes from the URL and is not hard-coded. So keep the URL from the exercise in your code exactly as given.
-- When all tests are green (✔) you'll see **✅ the task is APPROVED** and you can move on to the next task.
-- After `git push` the tests also run on GitHub (Actions tab). A green check next to the commit = the task is approved.
-- To check a single exercise: `node --test test/ex4.test.js`
+- בהתחלה כל הבדיקות מסומנות באדום (✘). שם כל בדיקה מתחיל במספר התרגיל שאותו היא בודקת.
+- הבדיקות מריצות כל קובץ בדיוק כמו `node exN.js`, שולחות בקשות אמיתיות לשרת ובודקות מה הוא החזיר **וגם מה הוא הדפיס בטרמינל** (`console.log`).
+- אין צורך להפעיל את השרת בעצמכם לפני הרצת `npm test`. הבדיקות מפעילות אותו בעצמן (בפורט פנוי, גם אם פורט 3000 תפוס).
+- מתחת לכל בדיקה שנכשלה תוכלו לראות מה השתבש, ולעיתים גם מה התוכנית שלכם הדפיסה בפועל.
+- בתרגילי URL, הבדיקות מריצות את הקוד גם עם כתובת URL **שונה** מזו שמופיעה בתרגיל, כדי לוודא שהפלט באמת נוצר מתוך כתובת ה-URL ולא הוגדר מראש בקוד. לכן, השאירו בקוד את כתובת ה-URL שמופיעה בתרגיל בדיוק כפי שניתנה.
+- כאשר כל הבדיקות מסומנות בירוק (✔), תופיע ההודעה **✅ המשימה אושרה (APPROVED)** ותוכלו לעבור למשימה הבאה.
+- לאחר הרצת `git push`, הבדיקות רצות גם ב-GitHub (בלשונית Actions). סימון ירוק לצד ה-commit פירושו שהמשימה אושרה.
+- כדי לבדוק תרגיל בודד: `node --test test/ex4.test.js`
 
-> Don't change the files in the `test/` folder.
+> אין לשנות את הקבצים שבתיקיית `test/`.
 
 ---
 
-## Part A - Base server
+## חלק A – שרת בסיסי
 
-In every exercise you create a server with `http.createServer(...)` and start it with `server.listen(3000)`.
+בכל תרגיל יוצרים שרת באמצעות `http.createServer(...)` ומפעילים אותו באמצעות `server.listen(3000)`.
 
 ```js
 const http = require("http");
@@ -57,49 +57,61 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => console.log("Server running on http://localhost:3000"));
 ```
 
-### Exercise 1: Return a fixed text - `ex1.js`
-**Goal:** Create a server that always responds with:
+### תרגיל 1: החזרת טקסט קבוע – `ex1.js`
+
+**מטרה:** ליצור שרת שתמיד מחזיר את התשובה:
+
 `"Hello from Node Server!"`
-regardless of the request.
 
-### Exercise 2: Return the request method - `ex2.js`
-**Goal:** The server should return the method used in the request.
-Example: if the method is GET, respond with `"You used method: GET"`
+ללא קשר לבקשה שהתקבלה.
 
-### Exercise 3: Return the request headers - `ex3.js`
-**Goal:** Return all the request headers back to the client as a JSON string.
+### תרגיל 2: החזרת שיטת הבקשה – `ex2.js`
+
+**מטרה:** השרת צריך להחזיר את השיטה שבה נעשה שימוש בבקשה.
+
+דוגמה: אם שיטת הבקשה היא GET, יש להחזיר:
+
+`"You used method: GET"`
+
+### תרגיל 3: החזרת כותרות הבקשה – `ex3.js`
+
+**מטרה:** להחזיר ללקוח את כל כותרות הבקשה (Request Headers) כמחרוזת JSON.
 
 ---
 
-## Part B - URL Module
+## חלק B – מודול URL
 
-**How to use:**
+### איך משתמשים במודול?
 
 ```js
-const { URL } = require("url");   // or: import { URL } from "url";
+const { URL } = require("url");   // או: import { URL } from "url";
 
 const myUrl = new URL('http://localhost:3000/search?term=nodejs&limit=10');
-console.log(myUrl.pathname);                  // "/search"
+console.log(myUrl.pathname);                 // "/search"
 console.log(myUrl.searchParams.get('term'));  // "nodejs"
 ```
 
-> This project uses `require` (CommonJS), like the previous exercises.
+> הפרויקט הזה משתמש ב-`require` (שיטת CommonJS), כמו בתרגילים הקודמים.
 
-### Exercise 4: Parse and Log URL Parts - `ex4.js`
-**Task:** Create a script that receives a URL string and logs the following parts:
-- Hostname
-- Pathname
-- Protocol
-- Query string
-- Fragment (hash)
+### תרגיל 4: ניתוח חלקי כתובת URL והדפסתם – `ex4.js`
 
-**Example URL to use:**
+**משימה:** ליצור סקריפט שמקבל מחרוזת של כתובת URL ומדפיס את החלקים הבאים:
+
+- שם המארח (Hostname)
+- נתיב (Pathname)
+- פרוטוקול (Protocol)
+- מחרוזת השאילתה (Query String)
+- מקטע (Fragment / Hash)
+
+**כתובת URL לדוגמה שבה יש להשתמש:**
+
 ```js
 const urlStr = 'http://localhost:3000/users/list?role=admin&active=true#top';
 ```
 
-**Expected Output:**
-```
+**הפלט המצופה:**
+
+```text
 Hostname: localhost
 Pathname: /users/list
 Protocol: http:
@@ -107,88 +119,124 @@ Query: ?role=admin&active=true
 Hash: #top
 ```
 
-### Exercise 5: Extract Query Parameters - `ex5.js`
-**Task:** Given a URL, extract the value of specific query parameters using `.searchParams.get()`:
-- Use `https://site.com/products?id=15&type=book&lang=en`
-- Extract the values of `id`, `type`, and `lang`
-- Print them
+### תרגיל 5: חילוץ פרמטרים מתוך כתובת URL – `ex5.js`
 
-**Expected Output:**
-```
+**משימה:** בהינתן כתובת URL, יש לחלץ ערכים של פרמטרים מסוימים באמצעות `.searchParams.get()`:
+
+- השתמשו בכתובת:
+  `https://site.com/products?id=15&type=book&lang=en`
+- חלצו את הערכים של `id`, `type` ו-`lang`.
+- הדפיסו אותם.
+
+**הפלט המצופה:**
+
+```text
 ID: 15
 Type: book
 Language: en
 ```
 
-### Exercise 6: Modify Query Parameters - `ex6.js`
-**Task:** Start with this URL:
+### תרגיל 6: שינוי פרמטרים בכתובת URL – `ex6.js`
+
+**משימה:** התחילו מכתובת ה-URL הבאה:
+
 ```js
 const urlStr = 'https://app.com/search?query=node&sort=asc';
 ```
-- Change the query parameter `sort` to `'desc'`
-- Add a new parameter `page=3`
-- Remove `query`
-- Print the final URL
 
-**Expected Output:**
-```
+- שנו את הפרמטר `sort` לערך `'desc'`.
+- הוסיפו פרמטר חדש בשם `page` עם הערך `3`.
+- הסירו את הפרמטר `query`.
+- הדפיסו את כתובת ה-URL הסופית.
+
+**הפלט המצופה:**
+
+```text
 https://app.com/search?sort=desc&page=3
 ```
 
-**Hint:** Use `.searchParams.set()`, `.searchParams.append()`, and `.searchParams.delete()`.
-To print the URL as text, use `myUrl.href` (or `myUrl.toString()`).
+**רמז:** השתמשו במתודות:
+
+- `.searchParams.set()`
+- `.searchParams.append()`
+- `.searchParams.delete()`
+
+כדי להדפיס את כתובת ה-URL כמחרוזת טקסט, השתמשו ב-`myUrl.href` או ב-`myUrl.toString()`.
 
 ---
 
-## Part C - Vanilla server
+## חלק C – שרת Vanilla
 
-### Exercise 7: Log Request Method, URL, and HTTP Version - `ex7.js`
-**Task:** Create a server on port 3000. For each request:
-- Log the method used (e.g. GET, POST)
-- Log the request URL (e.g. /login?x=1)
-- Log the HTTP version used (e.g. 1.1, 2.0)
+### תרגיל 7: הצגת שיטת הבקשה, כתובת ה-URL וגרסת HTTP – `ex7.js`
 
-**Use:** `req.method`, `req.url`, `req.httpVersion`
+**משימה:** ליצור שרת בפורט 3000. עבור כל בקשה שמתקבלת, יש:
 
-**Expected Example Output** (in the terminal where the server runs, after opening `http://localhost:3000/login?x=1`):
-```
+- להדפיס את שיטת הבקשה (לדוגמה GET, POST).
+- להדפיס את כתובת הבקשה (לדוגמה `/login?x=1`).
+- להדפיס את גרסת HTTP שבה נעשה שימוש (לדוגמה 1.1 או 2.0).
+
+**יש להשתמש במאפיינים:**
+
+- `req.method`
+- `req.url`
+- `req.httpVersion`
+
+**דוגמה לפלט המצופה** (בטרמינל שבו השרת פועל, לאחר פתיחת הכתובת `http://localhost:3000/login?x=1`):
+
+```text
 Method: GET
 URL: /login?x=1
 HTTP Version: 1.1
 ```
 
-Note: besides logging, the server must also **answer** the request (`res.end(...)`), otherwise the browser keeps waiting. The tests check this too.
+הערה: בנוסף להדפסת הפרטים, השרת חייב גם **להחזיר תשובה** לבקשה (`res.end(...)`), אחרת הדפדפן ימשיך להמתין. גם הבדיקות בודקות זאת.
 
-> The browser sometimes sends an extra request to `/favicon.ico`, so you may see two logs in the terminal. That's fine.
+> לפעמים הדפדפן שולח בקשה נוספת ל-`/favicon.ico`, ולכן ייתכן שתראו שתי הודעות בטרמינל. זה תקין.
 
-### Exercise 8: Respond Based on Headers and Method - `ex8.js`
-**Task:** Create a server that checks:
-- If the method is POST
-- And the Content-Type header is application/json
+### תרגיל 8: תגובה בהתאם לכותרות ולשיטת הבקשה – `ex8.js`
 
-Respond with `"JSON accepted"`
-Otherwise, respond with `"Unsupported request"`
+**משימה:** ליצור שרת שבודק:
 
-**Hint:**
-- `req.method === 'POST'`
-- `req.headers['content-type'] === 'application/json'`
+- האם שיטת הבקשה היא POST.
+- האם הכותרת Content-Type היא `application/json`.
 
-### Exercise 9: Manual Route Handling with Method Check - `ex9.js`
-**Task:** Create a simple server that:
-- Accepts a GET request to `/hello` → Respond with: `"Hello from GET"`
-- Accepts a POST request to `/hello` → Respond with: `"Hello from POST"`
-- Anything else → Respond with: `"Not supported"`
+אם שני התנאים מתקיימים, יש להחזיר:
 
-**Use only:** `req.url`, `req.method`
+`"JSON accepted"`
+
+אחרת, יש להחזיר:
+
+`"Unsupported request"`
+
+**רמז:**
+
+```js
+req.method === 'POST'
+req.headers['content-type'] === 'application/json'
+```
+
+### תרגיל 9: טיפול ידני בניתוב ובדיקת שיטת הבקשה – `ex9.js`
+
+**משימה:** ליצור שרת פשוט ש:
+
+- מקבל בקשת GET לכתובת `/hello` ← מחזיר: `"Hello from GET"`.
+- מקבל בקשת POST לכתובת `/hello` ← מחזיר: `"Hello from POST"`.
+- כל בקשה אחרת ← מחזירה: `"Not supported"`.
+
+**יש להשתמש רק ב:**
+
+- `req.url`
+- `req.method`
 
 ---
 
-## Self-check
-- [ ] `node ex1.js` → the browser shows `Hello from Node Server!` on every path.
-- [ ] `node ex2.js` → in Postman, `POST` returns `You used method: POST`.
-- [ ] `node ex3.js` → you see a JSON with the headers your browser sent (`host`, `user-agent`...).
-- [ ] `node ex4.js`, `node ex5.js`, `node ex6.js` → the output matches the Expected Output.
-- [ ] `node ex7.js` → every browser refresh prints Method, URL and HTTP Version in the terminal.
-- [ ] `node ex8.js` → `POST` with `Content-Type: application/json` returns `JSON accepted`, everything else returns `Unsupported request`.
-- [ ] `node ex9.js` → `/hello` with GET and with POST answers correctly, everything else returns `Not supported`.
-- [ ] `npm test` → **✅ the task is APPROVED**
+## בדיקה עצמית (Self-check)
+
+- [ ] `node ex1.js` ← הדפדפן מציג `Hello from Node Server!` בכל נתיב.
+- [ ] `node ex2.js` ← ב-Postman, בקשת POST מחזירה `You used method: POST`.
+- [ ] `node ex3.js` ← מוצג JSON עם כותרות הבקשה שהדפדפן שלח (`host`, `user-agent` ועוד).
+- [ ] `node ex4.js`, `node ex5.js`, `node ex6.js` ← הפלט תואם לפלט המצופה.
+- [ ] `node ex7.js` ← כל רענון של הדפדפן מדפיס בטרמינל את Method, URL ו-HTTP Version.
+- [ ] `node ex8.js` ← בקשת POST עם `Content-Type: application/json` מחזירה `JSON accepted`, וכל בקשה אחרת מחזירה `Unsupported request`.
+- [ ] `node ex9.js` ← הכתובת `/hello` מחזירה תשובה מתאימה לבקשות GET ו-POST, וכל בקשה אחרת מחזירה `Not supported`.
+- [ ] `npm test` ← **✅ המשימה אושרה (APPROVED)**.
